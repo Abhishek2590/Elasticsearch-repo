@@ -1,0 +1,15 @@
+ElasticSearch is an open-source, RESTful, distributed search and analytics engine. There are two ways to setup ELK stack. One is self managed stack on an EC2 Instance or server and the Second is to use AWS managed Stack.
+I used the second option since it is less time taking and more reliable,secured.
+
+1) Created a t2.small Elasticsearch and it is recommended to launch it in VPC so it's not accessible from open network for this demo i launched it with public access.
+2) It is secured and works only on https. It can be extended to a cluster by configuring cluster in the elasticsearch console.
+3) Since it is AWS managed, it's monitoring is managed by AWS. We can monitor cluster health from the AWS console and incase cluster health goes down i.e goes red AWS manage it itslef and send alert in case cluster size need to be increased.Monitoring can be done on number of nodes, cluster health, searchable documents, EBS metrics (if applicable), CPU, memory and disk utilization for data and master nodes
+4) Authentication is provided using AWS Cognito service where there is a defined user pool aand user credentials are saved in the pool for enabling access.
+
+Link to access Kibana Visulization of Elasticsearch : https://search-mytestingdomain-tvrews3mucpu2ne3j5wtmjldlu.ap-south-1.es.amazonaws.com/_plugin/kibana/
+Username : TestingUser
+Password : Testing@1234
+
+We can configure Amazon Elasticsearch Service domain as the data store for all logs arriving from Logstash implementation.
+
+Scaling your Amazon Elasticsearch Service domain by adding or modifying instances, and storage volumes is an online operation that does not require any downtime.
